@@ -1,0 +1,12 @@
+extends ../../layout.jade
+block contenido
+	div(class="img-container")
+		h1= servicio.id + " " + servicio.nombre
+		if servicio.estado == "0"
+			h2 Estado: Ocupado
+		if servicio.estado == "1"
+			h2 Estado: Disponible
+		p= servicio.descripcion
+		a(href="/servicios/#{servicio.id}/editar",class="right-space") Editar
+		form(action="/servicios/#{servicio.id}?_method=DELETE" class="link" method="POST")
+			input(type="submit", value="Eliminar")

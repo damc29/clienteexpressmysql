@@ -1,0 +1,25 @@
+extends ../../layout.jade
+block contenido
+	div(class="col-md-6 remove-float center-block big-top-space")
+		h1 Editar servicio
+		form(action="/servicios/#{servicio.id}?_method=PUT", method="POST")
+			input(type="hidden" value="PUT" name="_method")
+			div(class="form-group")
+				label(for="nombre") Nombre
+				input(type="text", name="nombre",placeholder="Nombre del servicio...",id="nombre", class="form-control", value="#{servicio.nombre}", required)
+			div
+				label(for="estado") Estado
+				if servicio.estado == "0"
+					select(name="estado", class="form-control",id="estado", required)
+						option(value="0", selected) Ocupado
+						option(value="1") Disponible
+				if servicio.estado == "1"
+					select(name="estado", class="form-control",id="estado", required)
+						option(value="0") Ocupado
+						option(value="1", selected) Disponible
+			div
+				label(for="descripcion") Descripcion
+				textarea(name="descripcion",id="descripcion", rows="10", cols="50", class="form-control")= servicio.descripcion
+			div(class="row top-space")
+				div(class="col-xs-12 col-sm-6")
+					input(type="submit" value="Editar" class="btn btn-info")

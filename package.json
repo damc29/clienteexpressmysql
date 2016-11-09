@@ -1,0 +1,18 @@
+{
+  "name": "clase",
+  "version": "1.0.0",
+  "description": "Pruebas de conexion y persistencia con mysql",
+  "main": "index.js",
+  "author": "DiegoAMC",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "cookie-parser": "^1.4.3",
+    "cors": "^2.8.1",
+    "express": "^4.14.0",
+    "jade": "^1.11.0",
+    "method-override": "^2.3.6",
+    "mysql": "^2.11.1",
+    "sequelize": "^3.24.4",
+    "serve-favicon": "^2.3.0"
+  }
+}

@@ -1,0 +1,21 @@
+extends ../layout.jade
+block contenido
+	for servicio in servicios
+		div(class="img-container")
+			.white.border.tr.large-padding
+				.row
+					.col-md-10
+						h2 
+							a(href="/servicios/#{servicio.id}")= servicio.id + " " + servicio.nombre
+						if servicio.estado == "0"
+							p Estado: Ocupado
+						if servicio.estado == "1"
+							p Estado: Disponible
+						h3 Descripcion
+						p= servicio.descripcion
+					.col-md-2
+						a(href="/servicios/#{servicio.id}/editar",class="right-space") Editar
+						form(action="/servicios/#{servicio.id}?_method=DELETE" class="link" method="POST")
+							input(type="submit", value="Eliminar")
+	else
+		h2 No hay registros para mostrar

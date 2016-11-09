@@ -1,0 +1,22 @@
+doctype html
+html(lang="es")
+	head
+		title Clase
+		meta(chartset="utf-8")
+		link(href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet")
+		link(href="/public/css/app.css" rel="stylesheet")
+				
+	body
+		nav(class="large-padding black white-text")
+			ul
+				li 
+					a(href="/") Inicio
+				li 
+					a(href="/servicios/nuevo") Nuevo servicio
+				li 
+					a(href="/servicios") Lista de servicios			
+
+		block contenido
+			
+		footer(class="large-padding black white-text big-top-space")
+			p hecho por DAMC

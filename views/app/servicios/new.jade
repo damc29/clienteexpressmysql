@@ -1,0 +1,20 @@
+extends ../../layout.jade
+block contenido
+	div(class="col-md-6 remove-float center-block big-top-space")
+		h1 Crear nuevo servicio
+		form(action="/servicios", method="POST")
+			div(class="form-group")
+				label(for="nombre") Nombre
+				input(type="text", name="nombre",placeholder="Nombre del servicio...",id="nombre", class="form-control" required)
+			div
+				label(for="estado") Estado
+				select(name="estado",class="form-control",id="estado",required)
+					option(value="") Elija una opcion
+					option(value="0") Ocupado
+					option(value="1") Disponible
+			div
+				label(for="descripcion") Descripcion
+				textarea(name="descripcion",id="descripcion", rows="10", cols="50", class="form-control")
+			div(class="row top-space")
+				div(class="col-xs-12 col-sm-6")
+					input(type="submit" value="Crear" class="btn btn-info")
